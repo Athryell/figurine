@@ -1,0 +1,13 @@
+<nav class="topbar">
+    <img class="logo" src="/assets/logo-panini_51144.jpeg"> 
+    <h2 class="title" >Figurine shop</h2>
+    
+    <div class="userContainer" *ngIf="displayUserIcon">
+        <img class="user" src="/assets/pngtree-user-icon-png-image_1796659.jpg">
+        <div class="arrow"></div>
+        <div class="userDetail">
+            Ciao, {{username}}
+            <button class="btn btn-warning" (click)="logOut()">Logout</button>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,32 @@
+[
+        {
+            "title": "Mario Rossi",
+            "costo": "50€",
+            "anno" : 1994,
+            "collezione": "uomini"
+        },
+        {
+            "title": "Giorgio Bianchi",
+            "costo": "150€",
+            "anno" : 1997,
+            "collezione": "uomini"
+        },
+        {
+            "title": "Alice Rosa",
+            "costo": "350€",
+            "anno" : 1987,
+            "collezione": "donne"
+        },
+        {
+            "title": "Gioele Giallo",
+            "costo": "20€",
+            "anno" : 1954,
+            "collezione": "uomini"
+        },
+        {
+            "title": "Serena Neri",
+            "costo": "10€",
+            "anno" : 1994,
+            "collezione": "donne"
+        }
+]

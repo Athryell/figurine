@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="col-4 offset-4">
+        <h1 class="login_title">Login user</h1>
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)" class="container">
+            <div class="input-group">
+                <span class="input-group-text">Username:</span>
+                <input id="username" class="form-control" formControlName="username" placeholder="Your username">
+
+            </div>
+            <div *ngIf="myForm.get('username')?.invalid && (myForm.get('username')?.dirty || myForm.get('username')?.touched)" class="invalid alert alert-danger">
+                NAME INVALID!
+            </div>
+            <br>
+            <div class="input-group">
+                <span class="input-group-text">Password:</span>
+                <input class="form-control" formControlName="password" placeholder="Your password">
+            </div>
+            <div *ngIf="myForm.get('password')?.invalid && (myForm.get('password')?.dirty || myForm.get('password')?.touched)" class="invalid alert alert-danger">
+                PASSWORD INVALID! (At least 6 characters and a number)
+            </div>
+            <br>
+            <button class="btn btn-primary" type="submit">Login</button>
+            <div *ngIf="errorForm" class="invalid alert alert-danger">
+                FORM INVALID!
+            </div> 
+            <div *ngIf="loginFailed">
+                <app-toast [title]="'Login Fallito'" [message]="'non c\'é corrispondenza'">
+
+                </app-toast>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+.login_title {
+    text-align: center;
+    margin-block: 20px;
+}
+
+.invalid{
+    padding: 0.2rem 0.75rem;
+    font-size: 10px;
+}

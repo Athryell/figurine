@@ -1,0 +1,9 @@
+<div class="lista">
+    <div>
+        <ol>
+            <li *ngFor="let figurina of cardDetail" (click)="onClick(figurina.id)">
+                {{figurina.title}}
+            </li>
+        </ol>
+    </div>
+</div>
