@@ -31,7 +31,7 @@
 }
 
 
-.arrow{
+/*.arrow{
     display: none;
     position: absolute;
     background-color: rgba(128, 128, 128, 0.5);
@@ -41,7 +41,7 @@
     width: 0;
     height: 0;
     top: 100%;
-}
+}*/
 
 .userContainer {
     position: relative;
@@ -49,5 +49,16 @@
 
 .userContainer:hover .userDetail, .userContainer:hover .arrow{
     display: block;
+}
+
+.userDetail::before {
+    position: absolute;
+    content: "";
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    border: 5px solid transparent;
+    border-bottom: 8px solid rgba(128, 128, 128, 0.5);
 }
 
