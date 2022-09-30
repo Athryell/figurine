@@ -44,7 +44,7 @@ export class TopbarComponent implements OnInit {
   }
 
   click(){
-    this.hover=true;
+    this.hover=!this.hover;
 
   }
 }
