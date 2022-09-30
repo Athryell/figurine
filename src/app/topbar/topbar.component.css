@@ -1,9 +1,10 @@
 
 .topbar {
     display: flex;
-    margin-top: 5px;
+    
     justify-content: space-around;
-    background-color: #76b5c5;
+    background-color: red;
+    
 }
 
 .logo {
@@ -12,15 +13,19 @@
 .title{
     margin-inline: 400px;
     margin-top: 7px;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    
 }
 
 .user{
-    width: 60px;
+    width: 40px;
+    
     cursor: pointer;
 }
 
 .userDetail {
-    display: none;
+    display: block;
     position: absolute;
     top: 100%;
     background-color: rgba(128, 128, 128, 0.5);
@@ -31,34 +36,28 @@
 }
 
 
-/*.arrow{
-    display: none;
-    position: absolute;
-    background-color: rgba(128, 128, 128, 0.5);
-    border-bottom: 5px solid rgba(128, 128, 128, 0.5);
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    width: 0;
-    height: 0;
-    top: 100%;
-}*/
 
 .userContainer {
     position: relative;
 }
 
-.userContainer:hover .userDetail, .userContainer:hover .arrow{
-    display: block;
-}
+/* .hover{
+    display: none;
+} */
 
-.userDetail::before {
+/* .userContainer:hover .userDetail, .userContainer:hover .arrow{
     position: absolute;
-    content: "";
+    display: block;
+    
+} */
+
+/* .userDetail {
+    position: absolute;
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
 
     border: 5px solid transparent;
     border-bottom: 8px solid rgba(128, 128, 128, 0.5);
-}
+} */
 
