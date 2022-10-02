@@ -11,11 +11,11 @@
     width: 200px;
 }
 .title{
-    margin-inline: 400px;
+    margin-inline: auto;
     margin-top: 7px;
     font-family:'Courier New', Courier, monospace;
     font-weight: bold;
-    
+    transform: translateX(-100px);
 }
 
 .user{
