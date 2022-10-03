@@ -1,6 +1,6 @@
 <div class="container mt-5">
     <div class="col-4 offset-4">
-        <h1 class="login_title">Login user</h1>
+        <h1 class="register_title">Register user</h1>
         <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)" class="container shadow p-5 border-custom">
             <div class="input-group">
                 <span class="input-group-text">Username:</span>
@@ -19,13 +19,25 @@
                 PASSWORD INVALID! (At least 6 characters and a number)
             </div>
             <br>
-            <button class="btn btn-primary" type="submit">Login</button>
-            <a class="register ms-4 text-decoration-none" [routerLink]="'/register'"> Register </a>
+            <div class="input-group" >
+                <span class="input-group-text">Confirm:</span>
+                <input class="form-control" formControlName="confirm" placeholder="Confirm password" type="password">
+            </div>
+            <br>
+            <div *ngIf="myForm.get('password')?.invalid && (myForm.get('password')?.dirty || myForm.get('password')?.touched)" class="invalid alert alert-danger">
+                PASSWORD INVALID! (At least 6 characters and a number)
+            </div>
+
+            <div>
+                <button class="btn btn-primary" type="submit">Register</button>
+                <a class="register ms-4 text-decoration-none" [routerLink]="'/login'"> Login </a>
+            </div>
+            
             <div *ngIf="errorForm" class="invalid alert alert-danger">
                 FORM INVALID!
             </div> 
-            <div *ngIf="loginFailed">
-                <app-toast [title]="'Login Fallito'" [message]="'non c\'é corrispondenza'">
+            <div *ngIf="registerFailed">
+                <app-toast [title]="'Register failed'" [message]="'Username used yet'">
 
                 </app-toast>
             </div>

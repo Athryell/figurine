@@ -12,6 +12,8 @@ import { CardDetailComponent } from './card-detail/card-detail.component';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastComponent } from './toast/toast.component';
+import { RegisterComponent } from './register/register.component';
+import {CookieService} from 'ngx-cookie-service';
 
 
 export class AppBootstrapModule {}
@@ -22,7 +24,8 @@ export class AppBootstrapModule {}
     ElencoFigurineComponent,
     CardDetailComponent,
     LoginComponent,
-    ToastComponent
+    ToastComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,7 @@ export class AppBootstrapModule {}
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

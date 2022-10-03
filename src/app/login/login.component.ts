@@ -5,7 +5,7 @@ import { LoginService } from '../services/login.service';
 import { User } from '../models/user';
 import { Router } from '@angular/router';
 import { UserloggedService } from '../services/userlogged.service';
-
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   
 
   constructor(private loginService: LoginService, private router: Router,
-    private userLoggedService: UserloggedService) { }
+    private userLoggedService: UserloggedService, private cookieService: CookieService) { }
 
   ngOnInit(): void {
     this.foundUser = false;
@@ -36,37 +36,18 @@ export class LoginComponent implements OnInit {
     if(!form.valid){
       this.errorForm = true;
     } else {
-      this.loginService.getUser().subscribe(
-        value => {
-          this.users = value;
-          if(this.validateUser(form)){
-            //entra nella home
-            localStorage.setItem("utente",form.value.username);
-            this.userLoggedService.getLogged().next(form.value.username);
-            this.router.navigateByUrl('/home');
-            console.log("Sei dentro!")
-          } else {
-            // TODO: toast
-            this.loginFailed = true;
-            console.log("Non sei entrato...")
-          }
-        },
-        error => {console.error('Error get user: ' + error)}
-      );
-      this.errorForm = false;
-    }
-    console.log('Valid?', form.valid)
-    console.log('name: ' + form.value.username)
-    console.log('pw: ' + form.value.password)
-  }
-
-  validateUser(form: FormGroup): boolean{
-    this.users.forEach(user => {
-      if(user.username == form.value.username && user.password == form.value.password){
-        this.foundUser = true;
+      if(this.loginService.getUser(form.value.username,form.value.password)){
+        this.cookieService.set("session",form.value.username);
+        this.userLoggedService.getLogged().next(form.value.username);
+        this.router.navigateByUrl('/home');
       }
-    });
-    return this.foundUser;
+      else {
+
+        this.loginFailed = true;
+        this.errorForm = false;
+    }
+
+  }
   }
 
   showDanger(dangerTpl: any) {

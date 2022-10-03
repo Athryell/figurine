@@ -8,3 +8,23 @@ li{
     margin-top: 5px;
     cursor: pointer;
 }
+
+.border-custom{
+    border: 2px solid transparent;
+    border-radius: 30px;
+    list-style: none;
+}
+
+.list-custom{
+    width: 100%;
+}
+
+.cursor-custom{
+    cursor: pointer;
+
+}
+
+.table-custom{
+    width: 50%;
+    border: solid 1px black;
+}
