@@ -1,3 +1,5 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
 .login_title {
     text-align: center;
     margin-block: 20px;
@@ -15,4 +17,18 @@
 .border-custom{
     border: 3px solid transparent;
     border-radius: 10px;
+}
+
+/* the eye icon */
+.bi {
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    right: 0%;
+    padding: 0.25em;
+    top: 0;
+    height: 100%;
+    font-size: 1.5em;
+    cursor: pointer;
 }

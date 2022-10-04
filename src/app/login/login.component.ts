@@ -18,7 +18,8 @@ export class LoginComponent implements OnInit {
   errorForm: boolean = false;
   users: Array<User> = [];
   foundUser: boolean = false;
-  loginFailed: boolean = false; 
+  loginFailed: boolean = false;
+  isPasswordRevealed: boolean = false;
   
 
   constructor(private loginService: LoginService, private router: Router,
@@ -52,5 +53,9 @@ export class LoginComponent implements OnInit {
 
   showDanger(dangerTpl: any) {
     this.loginService.show(dangerTpl, { classname: 'bg-danger text-light', delay: 15000 });
+  }
+
+  togglePasswordVisibility(){
+    this.isPasswordRevealed = !this.isPasswordRevealed;
   }
 }

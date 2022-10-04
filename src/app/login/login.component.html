@@ -13,7 +13,8 @@
             <br>
             <div class="input-group">
                 <span class="input-group-text">Password:</span>
-                <input class="form-control" formControlName="password" placeholder="Your password" type="password">
+                <input class="form-control" formControlName="password" placeholder="Your password" [type]="isPasswordRevealed ? 'text' : 'password' ">
+                <i [ngClass]="isPasswordRevealed ? 'bi bi-eye-slash' : 'bi bi-eye'" (click)="togglePasswordVisibility()"></i>
             </div>
             <div *ngIf="myForm.get('password')?.invalid && (myForm.get('password')?.dirty || myForm.get('password')?.touched)" class="invalid alert alert-danger">
                 PASSWORD INVALID! (At least 6 characters and a number)
