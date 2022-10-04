@@ -1,13 +1,22 @@
-<nav class="topbar">
-    <img class="logo" src="/assets/logo-panini_51144.jpeg"> 
-    <h2 class="title" >Figurine shop</h2>
+<nav class="topbar d-flex align-items-center">
+    <a [routerLink]="'/home'" class="mt-1"> <img class="logo" src="/assets/logo-panini_51144.jpeg"> </a>
+    <h2 class="title display-4">Figurine Shop</h2>
     
-    <div class="userContainer" *ngIf="displayUserIcon">
-        <img class="user" src="/assets/pngtree-user-icon-png-image_1796659.jpg">
-        <div class="arrow"></div>
-        <div class="userDetail">
-            Ciao, {{username}}
-            <button class="btn btn-warning" (click)="logOut()">Logout</button>
+    <div class="userContainer px-4" (click)='click()' *ngIf="displayUserIcon">
+        <img class="user mt-2" src="/assets/icona.png">
+        
+        
+        <div class="hover" *ngIf="hover">        
+            <div class="arrow"></div>
+            <div class="userDetail">
+                Ciao, {{username}}
+                <button class="btn btn-warning" (click)="logOut()">Logout</button>
+            </div>
         </div>
+
+
     </div>
+    
+
+  <script src="./script.ts"></script>
 </nav>
